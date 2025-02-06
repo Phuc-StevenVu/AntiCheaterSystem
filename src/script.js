@@ -1,9 +1,9 @@
 var SwitchTime = 0;
-window.addEventListener("blur", () =>  {
-    SwitchTime +=1;
-    console.log(SwitchTime);    
+document.addEventListener("visibilitychange", () => {
+    if(document.hidden) {
+        SwitchTime +=1;
+    }
+    if(SwitchTime>=2) {
+        window.location.replace('./camthi.html');
+    }
 });
-console.log(SwitchTime)
-if(SwitchTime > 2) {
-    window.open("./camthi.html");
-};
